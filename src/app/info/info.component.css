@@ -1,0 +1,46 @@
+.info {
+  margin-left: 8%;
+  margin-top: 15%;
+}
+
+.info h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+span {
+  color: #7a39b8;
+}
+
+.info p {
+  line-height: 22px
+}
+
+.img-box {
+  width: 45%;
+  height: 80%;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
+
+.img-box img {
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  transition: bottom 1s, left 1s;
+}
+
+.img-box .front-img {
+  height: 20%;
+}
+
+.img-box:hover .front-img {
+  left: 54%;
+}
+
+.img-box:hover .back-img {
+  left: 200px;
+}
