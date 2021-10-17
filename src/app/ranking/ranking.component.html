@@ -1,22 +1,24 @@
 <div class="ranking">
   <h1>{{datas.name}}</h1>
   Season: {{datas.seasonDisplay}}
-  <div>
-    <table border="1">
-      <tr>
-        <th>Rank</th>
-        <th>logo</th>
-        <th>short</th>
-        <th>name</th>
-        <th>wins</th>
-        <th>ties</th>
-        <th>losses</th>
-        <th>goals for</th>
-        <th>goals against</th>
-        <th>points</th>
-        <th>difference</th>
-      </tr>
-      <tr *ngFor="let standing of standings; let i = index">
+  <div class="table-responsive col-lg-12">
+    <table class="table table-light table-striped table-hover table-borderless">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Rank</th>
+          <th scope="col">logo</th>
+          <th scope="col">short</th>
+          <th scope="col">name</th>
+          <th scope="col">wins</th>
+          <th scope="col">ties</th>
+          <th scope="col">losses</th>
+          <th scope="col">goals for</th>
+          <th scope="col">goals against</th>
+          <th scope="col">points</th>
+          <th scope="col">difference</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let standing of standings; let i = index; let odd = odd" [ngClass]="{'odd-tr': odd===true}">
         <td>{{i+1}}</td>
         <td><img [src]="standing.team.logos[0].href" height=50></td>
         <td>{{standing.team.abbreviation}}</td>
