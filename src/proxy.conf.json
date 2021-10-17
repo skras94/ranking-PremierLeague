@@ -1,0 +1,8 @@
+{
+  "/leagues/eng.1/standings": {
+    "target": "https://api-football-standings.azharimm.site",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
