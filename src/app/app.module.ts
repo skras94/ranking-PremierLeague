@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { RankingComponent } from './ranking/ranking.component';
 import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     InfoComponent,
     FooterComponent,
     RankingComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
