@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpService } from '../services/http.service';
 
 @Component({
   selector: 'app-ranking',
@@ -10,38 +10,28 @@ export class RankingComponent implements OnInit {
 
   term: string = '';
 
-  status: any;
-  datas: any = [];
-  standings: any = [];
-  team: Team | undefined = undefined;
-  stats: any = [];
-  logos: any;
+  allData$!: Data;
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://localhost:4200/leagues/eng.1/standings?season=2021&sort=asc').subscribe( data => {
-      this.status = data.status;
-      this.datas = data.data;
-      this.standings = data.data.standings;
-      this.team = data.data.standings.team;
-      this.stats = data.data.standings.stats;
-      console.log(this.standings);
-    })
+    this.httpService.data$.subscribe(data => {
+      this.allData$ = data;
+    });
   }
 }
 
-export interface Search {
+export interface Main {
   status: boolean;
-  data: Data[];
+  data: Data;
 }
 
-export interface Data {
-  name: string;
-  abbreviation: string;
-  seasonDisplay: string;
-  season: number;
-  standings: Standing[];
+export class Data {
+  name!: string;
+  abbreviation!: string;
+  seasonDisplay!: string;
+  season!: number;
+  standings!: Standing[];
 }
 
 export interface Standing {

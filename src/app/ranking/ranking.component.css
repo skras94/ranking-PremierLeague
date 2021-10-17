@@ -10,3 +10,7 @@ tr {
 .odd-tr {
   background: lavender;
 }
+
+strong {
+  background: transparent;
+}

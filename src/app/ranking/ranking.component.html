@@ -1,6 +1,6 @@
 <div class="ranking">
-  <h1>{{datas.name}}</h1>
-  Season: {{datas.seasonDisplay}}
+  <h1>{{allData$.name}}</h1>
+  Season: {{allData$.seasonDisplay}}
   <nav class="navbar">
     <input type="text" class="form-control" placeholder="Search here (team name)" [(ngModel)]="term">
   </nav>
@@ -21,7 +21,7 @@
           <th scope="col">difference</th>
         </tr>
       </thead>
-      <tr *ngFor="let standing of standings | filter:term; let i = index; let odd = odd" [ngClass]="{'odd-tr': odd===true}">
+      <tr *ngFor="let standing of allData$.standings | filter:term; let i = index; let odd = odd" [ngClass]="{'odd-tr': odd===true}">
         <td>{{i+1}}</td>
         <td><img [src]="standing.team.logos[0].href" height=50></td>
         <td>{{standing.team.abbreviation}}</td>
@@ -33,7 +33,7 @@
           <td *ngIf="stat.name=='pointsFor'">{{stat.displayValue}}</td>
           <td *ngIf="stat.name=='pointsAgainst'">{{stat.displayValue}}</td>
           <td *ngIf="stat.name=='pointDifferential'">{{stat.displayValue}}</td>
-          <td *ngIf="stat.name=='points'">{{stat.displayValue}}</td>
+          <td *ngIf="stat.name=='points'"><strong>{{stat.displayValue}}</strong></td>
         </ng-container>
       </tr>
     </table>
