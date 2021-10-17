@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RankingComponent } from './components/ranking';
+import { NgPipesModule } from 'ngx-pipes';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { RankingComponent } from './components/ranking';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    NgPipesModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

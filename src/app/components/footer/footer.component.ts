@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  date = new Date().toLocaleString();
+  date = new Date();
 
   constructor() { }
 
