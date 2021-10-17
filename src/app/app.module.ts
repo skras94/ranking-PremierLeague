@@ -23,6 +23,6 @@ import { RankingComponent } from './ranking/ranking.component';
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [RankingComponent]
 })
 export class AppModule { }

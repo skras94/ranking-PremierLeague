@@ -1,1 +1,36 @@
-<p>ranking works!</p>
+<div>
+  <h1>{{datas.name}}</h1>
+  Season: {{datas.seasonDisplay}}
+  <div>
+    <table border="1">
+      <tr>
+        <th>Rank</th>
+        <th>logo</th>
+        <th>short</th>
+        <th>name</th>
+        <th>wins</th>
+        <th>ties</th>
+        <th>losses</th>
+        <th>goals for</th>
+        <th>goals against</th>
+        <th>points</th>
+        <th>difference</th>
+      </tr>
+      <tr *ngFor="let standing of standings; let i = index">
+        <td>{{i+1}}</td>
+        <td><img [src]="standing.team.logos[0].href" height=50></td>
+        <td>{{standing.team.abbreviation}}</td>
+        <td>{{standing.team.displayName}}</td>
+        <ng-container id="stat" *ngFor="let stat of standing.stats">
+          <td *ngIf="stat.name=='wins'">{{stat.displayValue}}</td>
+          <td *ngIf="stat.name=='ties'">{{stat.displayValue}}</td>
+          <td *ngIf="stat.name=='losses'">{{stat.displayValue}}</td>
+          <td *ngIf="stat.name=='pointsFor'">{{stat.displayValue}}</td>
+          <td *ngIf="stat.name=='pointsAgainst'">{{stat.displayValue}}</td>
+          <td *ngIf="stat.name=='pointDifferential'">{{stat.displayValue}}</td>
+          <td *ngIf="stat.name=='points'">{{stat.displayValue}}</td>
+        </ng-container>
+      </tr>
+    </table>
+  </div>
+</div>
