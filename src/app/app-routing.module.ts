@@ -1,6 +1,6 @@
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { RankingComponent } from './ranking/ranking.component';
-import { InfoComponent } from './info/info.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { RankingComponent } from './components/ranking/ranking.component';
+import { InfoComponent } from './components/info/info.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 

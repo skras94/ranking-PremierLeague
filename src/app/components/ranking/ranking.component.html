@@ -21,8 +21,8 @@
           <th scope="col">difference</th>
         </tr>
       </thead>
-      <tr *ngFor="let standing of allData$.standings | filter:term; let i = index; let odd = odd" [ngClass]="{'odd-tr': odd===true}">
-        <td>{{i+1}}</td>
+      <tr *ngFor="let standing of allData$.standings | filter:term; let odd = odd" [ngClass]="{'odd-tr': odd===true}">
+        <td>{{standing.stats[8].displayValue}}</td>
         <td><img [src]="standing.team.logos[0].href" height=50></td>
         <td>{{standing.team.abbreviation}}</td>
         <td>{{standing.team.displayName}}</td>
@@ -32,8 +32,8 @@
           <td *ngIf="stat.name=='losses'">{{stat.displayValue}}</td>
           <td *ngIf="stat.name=='pointsFor'">{{stat.displayValue}}</td>
           <td *ngIf="stat.name=='pointsAgainst'">{{stat.displayValue}}</td>
-          <td *ngIf="stat.name=='pointDifferential'">{{stat.displayValue}}</td>
           <td *ngIf="stat.name=='points'"><strong>{{stat.displayValue}}</strong></td>
+          <td *ngIf="stat.name=='pointDifferential'">{{stat.displayValue}}</td>
         </ng-container>
       </tr>
     </table>
