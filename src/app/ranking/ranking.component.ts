@@ -8,6 +8,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RankingComponent implements OnInit {
 
+  term: string = '';
+  pointsTerm: string = '';
+
   status: any;
   datas: any = [];
   standings: any = [];
@@ -27,7 +30,6 @@ export class RankingComponent implements OnInit {
       console.log(this.standings);
     })
   }
-
 }
 
 export interface Search {

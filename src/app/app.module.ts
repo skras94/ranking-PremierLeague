@@ -8,6 +8,8 @@ import { NavComponent } from './nav/nav.component';
 import { InfoComponent } from './info/info.component';
 import { FooterComponent } from './footer/footer.component';
 import { RankingComponent } from './ranking/ranking.component';
+import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { RankingComponent } from './ranking/ranking.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    FormsModule,
+    HttpClientModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
