@@ -45,3 +45,9 @@ span {
 .img-box:hover .back-img {
   left: 200px;
 }
+
+@media only screen and (max-width: 1000px) {
+  img {
+    opacity: 0;
+  }
+}
